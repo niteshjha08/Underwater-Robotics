@@ -81,11 +81,16 @@ def set_light(x=0,y=0,z=60,energy=50000):
 
 
 
-def set_camera(x=0, y=0, z=2, roll=0, pitch=0, yaw=0):
+def set_camera(x=0, y=0, z=2, roll=0, pitch=0, yaw=0, track=False):
+    
     # creates a new camera object at x,y,z, roll, pitch, yaw
     bpy.ops.object.camera_add(enter_editmode=False, align='VIEW', location=(x, y, z),\
      rotation=(roll, pitch, yaw), scale=(1, 1, 1))
     
+    if track:
+        bpy.ops.object.constraint_add(type='TRACK_TO')
+        bpy.context.object.constraints["Track To"].target = bpy.data.objects["BlueROV"]
+
     return bpy.context.object.name, bpy.context.object
 
 
@@ -150,9 +155,9 @@ def create_landscape(FloorNoise=1.2, texture_dir_path=None, surface_size=None):
     bpy.context.active_object.name = 'Landscape'
 
     # scale up the created landscape and then apply texture
-    bpy.context.object.scale[0] = 10
-    bpy.context.object.scale[1] = 10
-    bpy.context.object.scale[2] = 10
+    # bpy.context.object.scale[0] = 10
+    # bpy.context.object.scale[1] = 10
+    # bpy.context.object.scale[2] = 10
 
 
     PassiveObject = bpy.context.view_layer.objects.active

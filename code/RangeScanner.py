@@ -14,11 +14,11 @@ import range_scanner
 from CreateScene import create_landscape
 
 
-def run_scanner(context, scannerObject):    # Velodyne LiDAR
+def run_scanner(context, scannerObject, fov=60):    # Velodyne LiDAR
     return range_scanner.ui.user_interface.scan_rotating(
         context, 
         scannerObject=scannerObject,
-        xStepDegree=0.2, fovX=360.0, yStepDegree=0.33, fovY=2.5, rotationsPerSecond=20,
+        xStepDegree=1, fovX=fov, yStepDegree=1, fovY=2.5, rotationsPerSecond=20,
 
         reflectivityLower=0.0, distanceLower=0.0, reflectivityUpper=0.0, distanceUpper=99999.9, maxReflectionDepth=10,
         
