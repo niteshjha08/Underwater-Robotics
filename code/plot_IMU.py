@@ -68,10 +68,10 @@ gyro_y=0
 gyro_z=0
 
 count=0
-file=open(r"D:\\Programming\\Underwater-Robotics\\data\\output\\imu_dir/imu_values.txt",'r')
+file=open(r"C:\\Users\\Nitesh\Desktop\\imu_plot/imu_values.txt",'r')
 f=file.readlines()
 filename=''
-filepath="D:\\Programming\\Underwater-Robotics\\data\\output\\imu_dir/"
+filepath="C:\\Users\\Nitesh\Desktop\\imu_plot/imu_dir/"
 def animate(i):
     print(i)
     global count
@@ -119,9 +119,9 @@ def animate(i):
 
 
 if __name__=="__main__":
-    ani = FuncAnimation(fig, animate, interval=1,frames=717)
-    writer=animation.FFMpegWriter(fps=30)
-    ani.save(os.path.join(filepath,'imu_val_plot.mp4'),writer=writer)
+    ani = FuncAnimation(fig, animate, interval=1,frames=1437)
+    writer=animation.FFMpegWriter(fps=120)
+    ani.save(os.path.join(filepath,'imu_val_plot-new.mp4'),writer=writer)
     plt.close()
     print(count)
     # plt.show()

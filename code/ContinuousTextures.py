@@ -126,6 +126,6 @@ if __name__ == "__main__":
     block_size = 50
     display_texture = False
     save_texture = True
-    out_dir = None
+    out_dir = 'continuous_texture'
 
     continuous_texture(img_dir, block_size, display_texture, save_texture, out_dir)
