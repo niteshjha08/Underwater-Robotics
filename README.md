@@ -12,14 +12,20 @@ Ongoing project
 </p>
 
 ### Segmentation for oyster detection
-https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/segmentation.mp4
+https://user-images.githubusercontent.com/51222320/160022136-1d19570c-cf9c-4df5-988a-3882d69b64cf.mp4
+
 ### Visual SLAM
-https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/vslam.mp4
+https://user-images.githubusercontent.com/51222320/160022185-2de0b217-801e-40d9-bf05-2156adf3aecf.mp4
 
 ### Oyster Map Generation using SLAM and segmentation output
+
 <p align="center">
-<img src="https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/simulator-sensors.gif"/>
+<img src="https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/oyster_map.gif"/>
 </p>
+
+
+
+
 
 ## Tasks
 - [x] 2D bounding Box of objects from Blender `2.93`
