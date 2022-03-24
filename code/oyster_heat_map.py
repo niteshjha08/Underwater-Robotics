@@ -21,9 +21,7 @@ z_vals=[]
 while(x<500):
     while(y<500):
         X = np.linspace(x,x+50,50)
-
         Y = np.linspace(y,y+50,50)
-
         X, Y = np.meshgrid(X,Y)
 
         pos = np.empty(X.shape+(2,))
@@ -32,7 +30,6 @@ while(x<500):
 
         max_val=np.sum(thresh[y:y+50,x:x+50])
         non_zero_y,non_zero_x=np.where(thresh[y:y+50,x:x+50]>50)
-
 
         mean_x=x
         mean_y=y
@@ -66,7 +63,6 @@ while(x<500):
         z_vals.append(temp)
         a=z_vals
 
-   
     x+=50
     curr_x+=1
     curr_y=0
