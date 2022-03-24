@@ -1,6 +1,26 @@
 # Underwater-Robotics
 Ongoing project 
 
+### Generated underwater Scene
+<p align="center">
+<img src="https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/render.png"/>
+</p>
+
+### Camera, IMU and SONAR sensors integration
+<p align="center">
+<img src="https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/simulator-sensors.gif"/>
+</p>
+
+### Segmentation for oyster detection
+https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/segmentation.mp4
+### Visual SLAM
+https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/vslam.mp4
+
+### Oyster Map Generation using SLAM and segmentation output
+<p align="center">
+<img src="https://github.com/niteshjha08/Underwater-Robotics/blob/main/media/simulator-sensors.gif"/>
+</p>
+
 ## Tasks
 - [x] 2D bounding Box of objects from Blender `2.93`
 - [x] Integrate IMU with blender
