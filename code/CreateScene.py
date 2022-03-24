@@ -81,7 +81,7 @@ def set_light(x=0,y=0,z=60,energy=50000):
 
 
 
-def set_camera(x=0, y=0, z=2, roll=0, pitch=0, yaw=0, track=False):
+def set_camera(x=0, y=0, z=2, roll=0, pitch=0, yaw=0, track=False, focal_length=50):
     
     # creates a new camera object at x,y,z, roll, pitch, yaw
     bpy.ops.object.camera_add(enter_editmode=False, align='VIEW', location=(x, y, z),\
@@ -90,9 +90,9 @@ def set_camera(x=0, y=0, z=2, roll=0, pitch=0, yaw=0, track=False):
     if track:
         bpy.ops.object.constraint_add(type='TRACK_TO')
         bpy.context.object.constraints["Track To"].target = bpy.data.objects["BlueROV"]
+    bpy.context.object.data.lens = focal_length
 
     return bpy.context.object.name, bpy.context.object
-
 
 
 # Delete all the current meshes
@@ -255,10 +255,9 @@ def add_oyster(model_dir_path=None,texture_dir_path=None, n_clusters=5, min_oyst
         var_y=surface_size*0.10
         
         # Z is sequentially incremented for oyster within a cluster
-        z_val=0.5
+        z_val=0.02
 
-        for mesh_name in cluster_mesh_names:
-            z_val+=.1   
+        for mesh_name in cluster_mesh_names: 
             oyster_file_path=model_dir_path + "\\" + mesh_name
             bpy.ops.import_mesh.stl(filepath=oyster_file_path)
             bpy.ops.object.origin_set(type='GEOMETRY_ORIGIN', center='MEDIAN')
@@ -282,9 +281,9 @@ def add_oyster(model_dir_path=None,texture_dir_path=None, n_clusters=5, min_oyst
             bpy.context.object.location.z=z_val
             
             # Applying rigit body dynamics
-            bpy.ops.rigidbody.object_add(type='ACTIVE')
-            # Set mass
-            bpy.context.object.rigid_body.mass = 10
+            # bpy.ops.rigidbody.object_add(type='ACTIVE')
+            # # Set mass
+            # bpy.context.object.rigid_body.mass = 10
             
             # Apply texture and Smart UV project
             current_Object = bpy.context.view_layer.objects.active

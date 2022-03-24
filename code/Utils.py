@@ -112,7 +112,7 @@ def render_img(img_dir,keyframe, camera_name='Camera', save_RGB=True, save_DEPTH
         # save rendered depth img
         bpy.data.cameras[camera_name].dof.use_dof = False
         bpy.context.scene.camera = bpy.data.objects[camera_name]
-        bpy.context.scene.view_layers["View Layer"].use_pass_mist = True
+        bpy.context.scene.view_layers["ViewLayer"].use_pass_mist = True
         bpy.context.scene.use_nodes = True
         tree = bpy.context.scene.node_tree
         links = tree.links
@@ -132,7 +132,7 @@ def render_img(img_dir,keyframe, camera_name='Camera', save_RGB=True, save_DEPTH
         r.resolution_y = 480
         r.filepath=save_path
         bpy.ops.render.render(write_still=True)
-        bpy.context.scene.view_layers["View Layer"].use_pass_mist = False
+        bpy.context.scene.view_layers["ViewLayer"].use_pass_mist = False
         bpy.context.scene.use_nodes = False
         
 

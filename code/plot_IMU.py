@@ -52,7 +52,7 @@ wy.set_xlim(0, N)
 wy.set_xlabel('t')
 wy.set_ylabel('wy')
 
-# wz.set_ylim(-.1, .1)
+wz.set_ylim(-.1, .1)
 wz.set_xlim(0, N)
 wz.set_xlabel('t')
 wz.set_ylabel('wz')
@@ -68,10 +68,10 @@ gyro_y=0
 gyro_z=0
 
 count=0
-file=open(r"C:\\Users\\Nitesh\Desktop\\imu_plot/imu_values.txt",'r')
+file=open(r"C:\\Users\\Nitesh\\Desktop\\imu_values_2_5.txt",'r')
 f=file.readlines()
 filename=''
-filepath="C:\\Users\\Nitesh\Desktop\\imu_plot/imu_dir/"
+filepath=r"C:\Users\Nitesh\Desktop\imu_dir"
 def animate(i):
     print(i)
     global count
@@ -119,9 +119,9 @@ def animate(i):
 
 
 if __name__=="__main__":
-    ani = FuncAnimation(fig, animate, interval=1,frames=1437)
+    ani = FuncAnimation(fig, animate, interval=1,frames=17004)
     writer=animation.FFMpegWriter(fps=120)
-    ani.save(os.path.join(filepath,'imu_val_plot-new.mp4'),writer=writer)
+    ani.save(os.path.join(filepath,'imu_val_plot.mp4'),writer=writer)
     plt.close()
     print(count)
     # plt.show()
