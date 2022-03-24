@@ -1,5 +1,5 @@
 # Underwater-Robotics
-Ongoing project 
+Development of underwater rover simulator that can be used to detect oysters for this [project](https://isr.umd.edu/news/story/using-underwater-robots-to-detect-and-count-oysters). IMU and SONAR sensors are simulated mounted onto the rover. The simulator can be initialized with random landscapes, water turbidity, and with any underwater object randomly scattered in clusters. A custom rover path can be provided by user, which the rover will use to collect data and count oysters from and build the oyster map.
 
 ### Generated underwater Scene
 <p align="center">
